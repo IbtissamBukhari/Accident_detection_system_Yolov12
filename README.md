@@ -4,6 +4,31 @@ An end-to-end web application that analyses uploaded road-scene images and video
 
 This project is intended for academic demonstration and controlled local deployment. A model prediction supports human review; it is not a verified emergency-service dispatch or medical assessment.
 
+<p align="center">
+  <img src="ml_training/accident_model_bundle/training_run/val_batch0_pred.jpg" width="85%" alt="YOLOv12 predictions on validation images"/>
+</p>
+
+## Model results
+
+Custom **YOLOv12n** model trained for 40 epochs at 640 px on a 3-class dataset (`fire`, `moderate`, `severe`).
+
+Evaluated on the held-out **test set (1,800 images, 2,443 objects)**:
+
+| Class | Precision | Recall | mAP@50 | mAP@50-95 |
+|---|---|---|---|---|
+| **All** | **92.5%** | **86.8%** | **89.9%** | **79.0%** |
+| fire | 83.0% | 64.3% | 72.9% | 49.5% |
+| moderate | 97.6% | 96.9% | 97.3% | 94.3% |
+| severe | 96.9% | 99.0% | 99.4% | 93.2% |
+
+`fire` is the weakest class (smoke and flames have no clear box edges and vary a lot); collecting more fire images is the next improvement.
+
+Source: `ml_training/accident_model_bundle/metrics.json`. Training curves, PR curves and the confusion matrix are in `ml_training/accident_model_bundle/training_run/`.
+
+## Tech stack
+
+YOLOv12 (Ultralytics) · PyTorch · OpenCV · FastAPI · SQLAlchemy + Alembic · MySQL · React + Vite + Tailwind · Docker Compose · pytest · Gemini API (optional)
+
 ## What it does
 
 - Authenticated users upload images or videos for accident detection.
