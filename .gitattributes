@@ -1,0 +1,2 @@
+# Keep the training notebook out of the language stats so the repo shows its main language (Python)
+*.ipynb linguist-vendored
