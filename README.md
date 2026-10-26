@@ -4,6 +4,15 @@ An end-to-end web application that analyses uploaded road-scene images and video
 
 This project is intended for academic demonstration and controlled local deployment. A model prediction supports human review; it is not a verified emergency-service dispatch or medical assessment.
 
+## Team
+
+Final year project at Mirpur University of Science and Technology (MUST), Mirpur, built jointly by:
+
+- **Syed Ali Ibtissam Bukhari** — [GitHub](https://github.com/IbtissamBukhari) · [LinkedIn](https://www.linkedin.com/in/ibtissambukhari)
+- **Qosain Hyder Bukhari** — [GitHub](https://github.com/QosainBukhari)
+
+We developed the project together on a shared machine, so the commit history appears under one account. The original repository is [QosainBukhari/Accident_detection_system_Yolov12](https://github.com/QosainBukhari/Accident_detection_system_Yolov12).
+
 <p align="center">
   <img src="ml_training/accident_model_bundle/training_run/val_batch0_pred.jpg" width="85%" alt="YOLOv12 predictions on validation images"/>
 </p>
